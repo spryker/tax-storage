@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\TaxSetCriteriaTransfer;
 
 interface TaxSetStorageToTaxFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\TaxSetCriteriaTransfer $taxSetCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\TaxSetCollectionTransfer
-     */
     public function getTaxSetCollection(TaxSetCriteriaTransfer $taxSetCriteriaTransfer): TaxSetCollectionTransfer;
 }

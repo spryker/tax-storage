@@ -25,11 +25,6 @@ class TaxSetStorageToTaxFacadeBridge implements TaxSetStorageToTaxFacadeInterfac
         $this->taxFacade = $taxFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\TaxSetCriteriaTransfer $taxSetCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\TaxSetCollectionTransfer
-     */
     public function getTaxSetCollection(TaxSetCriteriaTransfer $taxSetCriteriaTransfer): TaxSetCollectionTransfer
     {
         return $this->taxFacade->getTaxSetCollection($taxSetCriteriaTransfer);

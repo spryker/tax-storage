@@ -85,12 +85,6 @@ class TaxSetPublisherTriggerPlugin extends AbstractPlugin implements PublisherTr
         return static::COL_ID_TAX_SET;
     }
 
-    /**
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \Generated\Shared\Transfer\TaxSetCriteriaTransfer
-     */
     protected function createTaxSetCriteria(int $offset, int $limit): TaxSetCriteriaTransfer
     {
         return (new TaxSetCriteriaTransfer())

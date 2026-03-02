@@ -25,10 +25,6 @@ class TaxStorageReader implements TaxStorageReaderInterface
      */
     protected $storageClient;
 
-    /**
-     * @param \Spryker\Client\TaxStorage\Dependency\Service\TaxStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\TaxStorage\Dependency\Client\TaxStorageToStorageClientInterface $storageClient
-     */
     public function __construct(
         TaxStorageToSynchronizationServiceInterface $synchronizationService,
         TaxStorageToStorageClientInterface $storageClient
@@ -37,11 +33,6 @@ class TaxStorageReader implements TaxStorageReaderInterface
         $this->storageClient = $storageClient;
     }
 
-    /**
-     * @param int $idTaxSet
-     *
-     * @return \Generated\Shared\Transfer\TaxSetStorageTransfer|null
-     */
     public function findTaxSetStorageByIdTaxSet(int $idTaxSet): ?TaxSetStorageTransfer
     {
         $key = $this->generateKey($idTaxSet);
@@ -53,11 +44,6 @@ class TaxStorageReader implements TaxStorageReaderInterface
         return (new TaxSetStorageTransfer())->fromArray($taxSetStorageData, true);
     }
 
-    /**
-     * @param int $idTaxSet
-     *
-     * @return string
-     */
     protected function generateKey(int $idTaxSet): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

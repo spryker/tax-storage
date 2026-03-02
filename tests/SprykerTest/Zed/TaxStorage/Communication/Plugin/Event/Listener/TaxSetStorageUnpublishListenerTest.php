@@ -53,9 +53,6 @@ class TaxSetStorageUnpublishListenerTest extends Unit
      */
     protected $taxSetTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -72,9 +69,6 @@ class TaxSetStorageUnpublishListenerTest extends Unit
         $this->taxSetTransfer = $this->tester->haveTaxSetWithTaxRates();
     }
 
-    /**
-     * @return void
-     */
     public function testHandleBulkTaxSetStorageEntityCanBeUnpublished(): void
     {
         $idTaxSet = $this->taxSetTransfer->getIdTaxSet();
@@ -99,9 +93,6 @@ class TaxSetStorageUnpublishListenerTest extends Unit
         $this->assertCount(0, $taxProductStorageEntities);
     }
 
-    /**
-     * @return void
-     */
     protected function saveTaxSetStorageEntity(): void
     {
         $taxRateTransfer = $this->taxSetTransfer->getTaxRates()[0];

@@ -68,12 +68,6 @@ class TaxStorageMapper
         return $synchronizationDataTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\TaxStorage\Persistence\SpyTaxSetStorage $spyTaxSetStorage
-     * @param \Generated\Shared\Transfer\TaxSetStorageTransfer $taxSetStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\TaxSetStorageTransfer
-     */
     protected function mapSpyTaxSetStorageToTaxSetStorageTransfer(
         SpyTaxSetStorage $spyTaxSetStorage,
         TaxSetStorageTransfer $taxSetStorageTransfer
@@ -83,12 +77,6 @@ class TaxStorageMapper
         return $taxSetStorageTransfer;
     }
 
-    /**
-     * @param \Orm\Zed\Tax\Persistence\Base\SpyTaxSet $spyTaxSet
-     * @param \Generated\Shared\Transfer\TaxSetStorageTransfer $taxSetStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\TaxSetStorageTransfer
-     */
     protected function mapSpyTaxSetToTaxSetStorageTransfer(SpyTaxSet $spyTaxSet, TaxSetStorageTransfer $taxSetStorageTransfer): TaxSetStorageTransfer
     {
         $taxSetStorageTransfer->fromArray($spyTaxSet->toArray(), true);
@@ -117,12 +105,6 @@ class TaxStorageMapper
         return $taxRateTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\Tax\Persistence\SpyTaxRate $spyTaxRate
-     * @param \Generated\Shared\Transfer\TaxRateStorageTransfer $taxRateStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\TaxRateStorageTransfer
-     */
     protected function mapSpyTaxRateToTaxRateStorageTransfer(
         SpyTaxRate $spyTaxRate,
         TaxRateStorageTransfer $taxRateStorageTransfer

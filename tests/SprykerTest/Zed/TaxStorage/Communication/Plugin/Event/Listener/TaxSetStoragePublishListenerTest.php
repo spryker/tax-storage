@@ -50,9 +50,6 @@ class TaxSetStoragePublishListenerTest extends Unit
      */
     protected $taxSetTransfer;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -69,9 +66,6 @@ class TaxSetStoragePublishListenerTest extends Unit
         $this->taxSetTransfer = $this->tester->haveTaxSetWithTaxRates();
     }
 
-    /**
-     * @return void
-     */
     public function testHandleBulkTaxSetStorageEntityCanBePublished(): void
     {
         $idTaxSet = $this->taxSetTransfer->getIdTaxSet();

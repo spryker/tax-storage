@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\TaxSetStorageTransfer;
 
 interface TaxStorageReaderInterface
 {
-    /**
-     * @param int $idTaxSet
-     *
-     * @return \Generated\Shared\Transfer\TaxSetStorageTransfer|null
-     */
     public function findTaxSetStorageByIdTaxSet(int $idTaxSet): ?TaxSetStorageTransfer;
 }

@@ -28,9 +28,6 @@ class TaxStorageCommunicationFactory extends AbstractCommunicationFactory
         return $this->getProvidedDependency(TaxStorageDependencyProvider::FACADE_EVENT_BEHAVIOR);
     }
 
-    /**
-     * @return \Spryker\Zed\TaxStorage\Dependency\Facade\TaxSetStorageToTaxFacadeInterface
-     */
     public function getTaxFacade(): TaxSetStorageToTaxFacadeInterface
     {
         return $this->getProvidedDependency(TaxStorageDependencyProvider::FACADE_TAX);

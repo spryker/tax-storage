@@ -28,11 +28,6 @@ class TaxStoragePublisher implements TaxStoragePublisherInterface
      */
     protected $taxStorageConfig;
 
-    /**
-     * @param \Spryker\Zed\TaxStorage\Persistence\TaxStorageRepositoryInterface $taxStorageRepository
-     * @param \Spryker\Zed\TaxStorage\Persistence\TaxStorageEntityManagerInterface $taxStorageEntityManager
-     * @param \Spryker\Zed\TaxStorage\TaxStorageConfig $taxStorageConfig
-     */
     public function __construct(
         TaxStorageRepositoryInterface $taxStorageRepository,
         TaxStorageEntityManagerInterface $taxStorageEntityManager,
