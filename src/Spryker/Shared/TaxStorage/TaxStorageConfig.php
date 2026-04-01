@@ -50,4 +50,14 @@ class TaxStorageConfig extends AbstractSharedConfig
      * @var string
      */
     public const TAX_SET_RESOURCE_NAME = 'tax_set';
+
+    /**
+     * Specification:
+     * - Queue name used for tax publish events.
+     *
+     * @api
+     *
+     * @var string
+     */
+    public const string PUBLISH_TAX_QUEUE = 'publish.tax';
 }
