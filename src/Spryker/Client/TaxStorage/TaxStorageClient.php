@@ -30,4 +30,20 @@ class TaxStorageClient extends AbstractClient implements TaxStorageClientInterfa
             ->createTaxStorageReader()
             ->findTaxSetStorageByIdTaxSet($idTaxSet);
     }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param array<int> $idTaxSets
+     *
+     * @return array<int, \Generated\Shared\Transfer\TaxSetStorageTransfer>
+     */
+    public function getTaxSetStoragesByIdTaxSets(array $idTaxSets): array
+    {
+        return $this->getFactory()
+            ->createTaxStorageReader()
+            ->getTaxSetStoragesByIdTaxSets($idTaxSets);
+    }
 }

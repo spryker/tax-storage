@@ -22,4 +22,18 @@ interface TaxStorageClientInterface
      * @return \Generated\Shared\Transfer\TaxSetStorageTransfer|null
      */
     public function findTaxSetStorageByIdTaxSet(int $idTaxSet): ?TaxSetStorageTransfer;
+
+    /**
+     * Specification:
+     *  - Finds tax sets within Storage for a given list of tax set IDs.
+     *  - Returns array indexed by tax set ID.
+     *  - Skips IDs not found in storage.
+     *
+     * @api
+     *
+     * @param array<int> $idTaxSets
+     *
+     * @return array<int, \Generated\Shared\Transfer\TaxSetStorageTransfer>
+     */
+    public function getTaxSetStoragesByIdTaxSets(array $idTaxSets): array;
 }

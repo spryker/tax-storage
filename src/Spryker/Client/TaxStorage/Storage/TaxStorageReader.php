@@ -44,6 +44,36 @@ class TaxStorageReader implements TaxStorageReaderInterface
         return (new TaxSetStorageTransfer())->fromArray($taxSetStorageData, true);
     }
 
+    /**
+     * @param array<int> $idTaxSets
+     *
+     * @return array<int, \Generated\Shared\Transfer\TaxSetStorageTransfer>
+     */
+    public function getTaxSetStoragesByIdTaxSets(array $idTaxSets): array
+    {
+        $storageKeys = array_map(fn (int $idTaxSet) => $this->generateKey($idTaxSet), $idTaxSets);
+        $taxSetStorageDataItems = $this->storageClient->getMulti($storageKeys);
+
+        $taxSetStoragesIndexedByIdTaxSet = [];
+
+        foreach ($taxSetStorageDataItems as $taxSetStorageData) {
+            if (!$taxSetStorageData) {
+                continue;
+            }
+
+            $taxSetStorageData = json_decode($taxSetStorageData, true);
+
+            if (!$taxSetStorageData) {
+                continue;
+            }
+
+            $taxSetStorage = (new TaxSetStorageTransfer())->fromArray($taxSetStorageData, true);
+            $taxSetStoragesIndexedByIdTaxSet[$taxSetStorage->getIdTaxSetOrFail()] = $taxSetStorage;
+        }
+
+        return $taxSetStoragesIndexedByIdTaxSet;
+    }
+
     protected function generateKey(int $idTaxSet): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

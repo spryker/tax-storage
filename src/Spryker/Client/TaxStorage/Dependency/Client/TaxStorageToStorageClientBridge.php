@@ -31,4 +31,14 @@ class TaxStorageToStorageClientBridge implements TaxStorageToStorageClientInterf
     {
         return $this->storageClient->get($key);
     }
+
+    /**
+     * @param array<string> $keys
+     *
+     * @return array<string, mixed>
+     */
+    public function getMulti(array $keys): array
+    {
+        return $this->storageClient->getMulti($keys);
+    }
 }
